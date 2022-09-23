@@ -37,7 +37,7 @@ foodRouter.delete("/deleteeach", (req, res) => {
     // console.log(req.query.id)
     postFood.findByIdAndDelete(req.query.id)
         .then(() => res.json(`${req.query.id} Deleted`))
-        .catch(err => res.status(400).json('Error' + err))
+        .catch(err => res.status(500).json('Error' + err))
 
 })
 
@@ -127,7 +127,7 @@ foodRouter.delete("/deletebreakfastall", (req, res) => {
     // console.log(req.query.id)
     postFood.deleteMany({ food: req.query.food })
         .then(() => res.json("breakfast Deleted"))
-        .catch(err => res.status(400).json('Error' + err))
+        .catch(err => res.status(500).json('Error' + err))
 
 })
 
@@ -163,7 +163,7 @@ foodRouter.delete("/deletelunchall", (req, res) => {
     // console.log(req.query.id)
     postFood.deleteMany({ food: "lunch" })
         .then(() => res.json("lunch Deleted"))
-        .catch(err => res.status(400).json('Error' + err))
+        .catch(err => res.status(500).json('Error' + err))
 
 })
 
@@ -199,7 +199,7 @@ foodRouter.delete("/deletedinnerall", (req, res) => {
     // console.log(req.query.id)
     postFood.deleteMany({ food: "dinner" })
         .then(() => res.json("dinner Deleted"))
-        .catch(err => res.status(400).json('Error' + err))
+        .catch(err => res.status(500).json('Error' + err))
 
 })
 
@@ -235,7 +235,7 @@ foodRouter.delete("/deletesnacksall", (req, res) => {
     // console.log(req.query.id)
     postFood.deleteMany({ food: "snacks" })
         .then(() => res.json("snacks Deleted"))
-        .catch(err => res.status(400).json('Error' + err))
+        .catch(err => res.status(500).json('Error' + err))
 
 })
 
